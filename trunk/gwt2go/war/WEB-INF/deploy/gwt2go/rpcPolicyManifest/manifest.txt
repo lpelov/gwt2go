@@ -1,0 +1,3 @@
+# Module gwt2go
+# RPC service class, partial path of RPC policy file
+com.gwt2go.dev.client.GreetingService, 537C9C5661CD809247092B77A8CAC585.gwt.rpc
