@@ -1,2 +1,0 @@
-serviceClass: com.gwt2go.dev.client.GreetingService
-path: 537C9C5661CD809247092B77A8CAC585.gwt.rpc
