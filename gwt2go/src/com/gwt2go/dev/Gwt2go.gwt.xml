@@ -21,7 +21,7 @@
 	<inherits name="com.google.gwt.activity.Activity" />
 	<inherits name="com.google.gwt.i18n.I18N" />
 	
-	<!-- inherits name="com.gwt2go.dev.linker.ManifestLinker" /-->
+	<inherits name="com.gwt2go.dev.linker.ManifestLinker" />
 
 	<!-- Inherit the default GWT style sheet. You can change -->
 	<!-- the theme of your GWT application by uncommenting -->
@@ -51,5 +51,5 @@
 	<source path='client' />
 	<source path='shared' />
 
-	<!-- add-linker name="manifest" /-->
+	<add-linker name="manifest" />
 </module>

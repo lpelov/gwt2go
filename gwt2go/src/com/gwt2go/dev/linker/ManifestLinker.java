@@ -10,8 +10,7 @@ import com.google.gwt.core.ext.linker.LinkerOrder;
 /**
  * Very simple linker
  * 
- * @author L.Pelov
- * TODO: Unable to compile the link, fix it!
+ * @author L.Pelov TODO: Unable to compile the link, fix it!
  */
 @LinkerOrder(LinkerOrder.Order.POST)
 public class ManifestLinker extends AbstractLinker {
@@ -28,7 +27,8 @@ public class ManifestLinker extends AbstractLinker {
 		ArtifactSet toReturn = new ArtifactSet(artifacts);
 
 		// Add a new artifact to the set that we're returning.
-		toReturn.add(emitString(logger, "Some simple text here", "manifest.txt"));
+		toReturn.add(emitString(logger, "Some simple text here",
+				"gwt2go.appcache"));
 
 		return toReturn;
 	}
