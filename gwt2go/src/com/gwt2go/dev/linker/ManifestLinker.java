@@ -10,7 +10,7 @@ import com.google.gwt.core.ext.linker.LinkerOrder;
 /**
  * Very simple linker
  * 
- * @author L.Pelov TODO: Unable to compile the link, fix it!
+ * @author L.Pelov
  */
 @LinkerOrder(LinkerOrder.Order.POST)
 public class ManifestLinker extends AbstractLinker {
