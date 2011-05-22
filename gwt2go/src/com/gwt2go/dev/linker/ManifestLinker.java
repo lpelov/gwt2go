@@ -5,7 +5,9 @@ import com.google.gwt.core.ext.TreeLogger;
 import com.google.gwt.core.ext.UnableToCompleteException;
 import com.google.gwt.core.ext.linker.AbstractLinker;
 import com.google.gwt.core.ext.linker.ArtifactSet;
+import com.google.gwt.core.ext.linker.CompilationResult;
 import com.google.gwt.core.ext.linker.LinkerOrder;
+import com.google.gwt.core.ext.linker.SelectionProperty;
 
 /**
  * Very simple linker
@@ -25,6 +27,19 @@ public class ManifestLinker extends AbstractLinker {
 
 		// Create a new set of artifacts that we can modify and return.
 		ArtifactSet toReturn = new ArtifactSet(artifacts);
+
+		// TODO: tests
+		for (SelectionProperty property : context.getProperties()) {
+			System.out.println(property.getName());
+			
+		}
+		
+		for (CompilationResult compilationResult : artifacts
+				.find(CompilationResult.class)) {
+			
+			System.out.println(compilationResult.getStrongName());
+			
+		}
 
 		// Add a new artifact to the set that we're returning.
 		toReturn.add(emitString(logger, "Some simple text here",
