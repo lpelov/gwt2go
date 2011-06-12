@@ -73,7 +73,7 @@ public class RootView extends Composite implements MainView {
 		// check to see if local storage API can be used!
 		// TODO: How to make application work offline!!!?!?!?
 		if (Storage.isSupported()) {
-			Window.alert("This browser supports local storage");
+			//Window.alert("This browser supports local storage");
 			
 			// OK if suport then get somethign from there
 			
@@ -82,7 +82,7 @@ public class RootView extends Composite implements MainView {
 			
 		}
 		else {
-			Window.alert("No loca storage support");
+			Window.alert("No local storage support");
 		}
 
 	}

@@ -31,7 +31,7 @@
 		Hello,
 		<g:Button styleName="{style.important}" ui:field="button" />
 		<g:Button styleName="{style.important}" ui:field="button2" />
-		<g:Button styleName="{style.important}" ui:field="dialogBox" />
+		<g:Button styleName="{style.important}" ui:field="dialogBox" />	
 		<g:TextBox ui:field="mytextbox"></g:TextBox>
 		
 		<table width="100%">
