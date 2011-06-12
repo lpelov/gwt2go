@@ -73,7 +73,7 @@ public class CellTableViewImpl extends Composite implements HasText,
 
 	@UiField
 	HTMLPanel htmlPanel;
-	
+
 	@UiField
 	Button button;
 
@@ -100,7 +100,7 @@ public class CellTableViewImpl extends Composite implements HasText,
 
 	// UI Binders
 	private Presenter presenter;
-	
+
 	public CellTableViewImpl(/* String firstName */) {
 		// Create a CellTable.
 
@@ -130,34 +130,33 @@ public class CellTableViewImpl extends Composite implements HasText,
 		ContactDatabase.get().addDataDisplay(cellTable);
 
 		initWidget(uiBinder.createAndBindUi(this));
-		
+
 		String firstname = "John";
 		String lastname = "Familyguy";
 		Date age = new Date(); // get's the current date/time
-		
-		DemoUser myuser = new DemoUser(firstname, lastname, age);		
-		
+
+		DemoUser myuser = new DemoUser(firstname, lastname, age);
+
 		CalendarUtil.addDaysToDate(age, 2);
-		
+
 		mytextbox.setText(myuser.getAge().toString());
-		
+
 		CalendarUtil.addDaysToDate(myuser.getAge(), 5);
-		
+
 		mytextbox.setText(myuser.getAge().toString());
-		
+
 		button.setText("Click me to go to the new sortable table example");
 		button2.setText("CustomPlaces");
-		dialogBox.setText("Open DialogBox");	
-				
+		dialogBox.setText("Open DialogBox");
+
 	}
-	
-	@UiHandler("button2")	
+
+	@UiHandler("button2")
 	void onButton2Click(ClickEvent e) {
 		this.presenter.goTo(new RootPlace("rootview"));
 	}
-	
-	
-	@UiHandler("button")	
+
+	@UiHandler("button")
 	void onClick(ClickEvent e) {
 		// experiments to give back to the presenter
 		// Window.alert("Hello!");
@@ -167,31 +166,31 @@ public class CellTableViewImpl extends Composite implements HasText,
 
 	@UiHandler("dialogBox")
 	void onDialogBoxClick(ClickEvent e) {
-		//presenter.onDialogBoxBtnClicked();
+		// presenter.onDialogBoxBtnClicked();
 		HTML close = new HTML("<b>X</b>");
 		DialogBoxExt dialog = new DialogBoxExt(close);
-		
+
 		dialog.setAnimationEnabled(true);
 		dialog.setAutoHideEnabled(true);
-		
+
 		HTML text2 = new HTML("Text 1 Text 1 Text 1 Text 1 Text 1");
 		HTML text3 = new HTML("Text 2");
 		HTML text4 = new HTML("Text 3");
 		VerticalPanel vrPanel = new VerticalPanel();
-		
-		//dialog.setHTML("This is the header");
+
+		// dialog.setHTML("This is the header");
 		dialog.setWidth("250px");
-		
-		 vrPanel.add(text2);
-		 vrPanel.add(text3);
-		 vrPanel.add(text4);
+
+		vrPanel.add(text2);
+		vrPanel.add(text3);
+		vrPanel.add(text4);
 
 		dialog.setWidget(vrPanel);
-		
+
 		dialog.center();
 		dialog.show();
 	}
-	
+
 	public void setText(String text) {
 		// button.setText(text);
 	}
