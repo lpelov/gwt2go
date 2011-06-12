@@ -1,7 +1,7 @@
 package com.gwt2go.dev.server;
 
-import com.gwt2go.dev.client.GreetingService;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
+import com.gwt2go.dev.client.GreetingService;
 import com.gwt2go.dev.shared.FieldVerifier;
 
 /**
@@ -45,4 +45,5 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements
 		return html.replaceAll("&", "&amp;").replaceAll("<", "&lt;")
 				.replaceAll(">", "&gt;");
 	}
+	
 }
