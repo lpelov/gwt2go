@@ -15,16 +15,22 @@
  */
 package com.gwt2go.dev.client.mapper;
 
-
 import com.google.gwt.activity.shared.Activity;
 import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.place.shared.Place;
 import com.gwt2go.dev.client.activity.CellTableActivity;
+import com.gwt2go.dev.client.activity.CellTableSorting23Activity;
 import com.gwt2go.dev.client.activity.CellTableSortingActivity;
+import com.gwt2go.dev.client.activity.EditorActivity;
 import com.gwt2go.dev.client.activity.GoodbyeActivity;
 import com.gwt2go.dev.client.place.RootPlace;
 import com.gwt2go.dev.client.ClientFactory;
 
+/**
+ * Activity Mapper handles the clicks on the right panel
+ * 
+ * @author L.Pelov
+ */
 public class RightActivityMapper implements ActivityMapper {
 
 	private ClientFactory clientFactory;
@@ -48,7 +54,16 @@ public class RightActivityMapper implements ActivityMapper {
 				return new CellTableSortingActivity(null, clientFactory);
 			}
 
+			if (name.equalsIgnoreCase("sortingtable23")) {
+				return new CellTableSorting23Activity(null, clientFactory);
+			}
+
+			if (name.equalsIgnoreCase("editor")) {
+				return new EditorActivity(null, clientFactory);
+			}
+
 		}
+
 		return new GoodbyeActivity(clientFactory);
 
 	}
