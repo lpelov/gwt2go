@@ -29,6 +29,13 @@ public class LeftSide extends Composite {
 	
 	@UiField
 	Button button2;
+	
+	@UiField
+	Button button3;
+
+	@UiField
+	Button btnEditor;
+
 	@UiField(provided=true) CellTree cellTree = new CellTree(
 		new TreeViewModel() {
 //			final AbstractDataProvider<String> dataProvider = new ListDataProvider<String>();
@@ -61,6 +68,9 @@ public class LeftSide extends Composite {
 		initWidget(uiBinder.createAndBindUi(this));
 		button1.setText("SortingTable1");
 		button2.setText("SortingTable2");
+		button3.setText("SortingTable_GWT2.3");
+		btnEditor.setText("Editor");
+		
 		this.clientFactory = clientFactory;
 		this.cellTree.setAnimationEnabled(true);
 	}
@@ -73,6 +83,16 @@ public class LeftSide extends Composite {
 	@UiHandler("button2")
 	void onButton2Click(ClickEvent e) {
 		this.clientFactory.getPlaceController().goTo(new RootPlace("table2"));
+	}
+
+	@UiHandler("button3")
+	void onButton3Click(ClickEvent e) {
+		this.clientFactory.getPlaceController().goTo(new RootPlace("sortingtable23"));
+	}
+
+	@UiHandler("btnEditor")
+	void onbtnEditorClick(ClickEvent e) {
+		this.clientFactory.getPlaceController().goTo(new RootPlace("editor"));
 	}
 
 }

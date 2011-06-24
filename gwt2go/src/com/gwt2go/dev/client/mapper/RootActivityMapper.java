@@ -15,13 +15,18 @@
  */
 package com.gwt2go.dev.client.mapper;
 
-
 import com.google.gwt.activity.shared.Activity;
 import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.place.shared.Place;
 import com.gwt2go.dev.client.activity.LeftSideActivity;
 import com.gwt2go.dev.client.ClientFactory;
 
+/**
+ * Activity mapper handles the clicks on of the left side panel.
+ * 
+ * @author L.Pelov
+ * 
+ */
 public class RootActivityMapper implements ActivityMapper {
 
 	private ClientFactory clientFactory;
@@ -34,9 +39,9 @@ public class RootActivityMapper implements ActivityMapper {
 	@Override
 	public Activity getActivity(Place place) {
 		// The activity you will get here, is the one from the RootView!!!
-		
+
 		return new LeftSideActivity(clientFactory);
-		
+
 	}
 
 }

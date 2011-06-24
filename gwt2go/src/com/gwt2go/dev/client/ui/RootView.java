@@ -59,6 +59,7 @@ public class RootView extends Composite implements MainView {
 				leftActivityMapper, this.clientFactory.getEventBus());
 		leftActivityManager.setDisplay(leftPanel);
 
+		// right side
 		ActivityMapper rightActivityMapper = new RightActivityMapper(
 				clientFactory);
 		ActivityManager rightActivityManager = new ActivityManager(

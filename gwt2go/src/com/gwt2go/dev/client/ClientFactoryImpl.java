@@ -20,9 +20,13 @@ import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.event.shared.SimpleEventBus;
 import com.google.gwt.place.shared.PlaceController;
 import com.gwt2go.dev.client.ui.CellTableSortingView;
+import com.gwt2go.dev.client.ui.CellTableSortingView23;
+import com.gwt2go.dev.client.ui.CellTableSortingView23Impl;
 import com.gwt2go.dev.client.ui.CellTableSortingViewImpl;
 import com.gwt2go.dev.client.ui.CellTableView;
 import com.gwt2go.dev.client.ui.CellTableViewImpl;
+import com.gwt2go.dev.client.ui.EditorView;
+import com.gwt2go.dev.client.ui.EditorViewImpl;
 import com.gwt2go.dev.client.ui.GoodbyeView;
 import com.gwt2go.dev.client.ui.GoodbyeViewImpl;
 import com.gwt2go.dev.client.ui.HelloView;
@@ -40,9 +44,11 @@ public class ClientFactoryImpl implements ClientFactory {
 	private final GoodbyeView goodbyeView = new GoodbyeViewImpl();
 	private final CellTableView cellTableView = new CellTableViewImpl();
 	private final CellTableSortingView cellTableSortingView = new CellTableSortingViewImpl();
+	private final CellTableSortingView23 celTableSortingView23 = new CellTableSortingView23Impl();
 	private final MainView rootView = new RootView(this);
 	private final LeftSide leftSide = new LeftSide(this);
 	private final RightSide rightSide = new RightSide();
+	private final EditorView editorView = new EditorViewImpl();
 
 	@Override
 	public EventBus getEventBus() {
@@ -87,6 +93,16 @@ public class ClientFactoryImpl implements ClientFactory {
 	@Override
 	public RightSide getRightSide() {
 		return rightSide;
+	}
+
+	@Override
+	public CellTableSortingView23 getCellTableSortingView23() {
+		return celTableSortingView23;
+	}
+
+	@Override
+	public EditorView getEditorView() {
+		return editorView;
 	}
 
 }
