@@ -69,7 +69,7 @@ public class LeftSide extends Composite {
 		button1.setText("SortingTable1");
 		button2.setText("SortingTable2");
 		button3.setText("SortingTable_GWT2.3");
-		btnEditor.setText("Editor");
+		btnEditor.setText("EditorWS");
 		
 		this.clientFactory = clientFactory;
 		this.cellTree.setAnimationEnabled(true);
