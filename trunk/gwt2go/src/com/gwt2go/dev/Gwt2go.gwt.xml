@@ -20,9 +20,12 @@
 	<inherits name='com.google.gwt.user.User' />
 	<inherits name="com.google.gwt.activity.Activity" />
 	<inherits name="com.google.gwt.i18n.I18N" />
-	
-	<inherits name="com.gwt2go.dev.linker.ManifestLinker" />
 
+	<!-- inherits name="com.gwt2go.dev.linker.ManifestLinker" / -->
+
+	<!-- set-property name="user.agent" value="gecko1_8"></set-property>
+	<set-property name="user.agent" value="ie8"></set-property -->
+	
 	<!-- Inherit the default GWT style sheet. You can change -->
 	<!-- the theme of your GWT application by uncommenting -->
 	<!-- any one of the following lines. -->
@@ -46,10 +49,12 @@
 
 	<!-- Specify the app entry point class. -->
 	<entry-point class='com.gwt2go.dev.client.Gwt2go' />
+	
+	<define-linker name="manifest" class="com.gwt2go.dev.linker.AppCacheManifestLinker" />
+	<add-linker name="manifest" />
 
 	<!-- Specify the paths for translatable code -->
 	<source path='client' />
 	<source path='shared' />
 
-	<add-linker name="manifest" />
 </module>
