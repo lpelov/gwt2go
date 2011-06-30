@@ -28,7 +28,7 @@ import com.google.gwt.place.shared.PlaceHistoryHandler;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
 import com.gwt2go.dev.client.mapper.AppActivityMapper;
 import com.gwt2go.dev.client.mapper.AppPlaceHistoryMapper;
-import com.gwt2go.dev.client.place.CellTablePlace;
+import com.gwt2go.dev.client.place.RootPlace;
 import com.gwt2go.dev.client.ui.widget.SimpleWidgetPanel;
 
 /**
@@ -37,7 +37,9 @@ import com.gwt2go.dev.client.ui.widget.SimpleWidgetPanel;
  * @author L.Pelov
  */
 public class Gwt2go implements EntryPoint {
-	private Place defaultPlace = new CellTablePlace("Sortable celltable view");
+	// private Place defaultPlace = new CellTablePlace("Sortable celltable view");
+	private Place defaultPlace = new RootPlace("rootview");
+	
 	private SimpleWidgetPanel appWidget = new SimpleWidgetPanel();
 
 	/**
