@@ -100,10 +100,11 @@ public class ManifestLinker extends AbstractLinker {
 					+ " to allow debugging. "
 					+ "Recompile before deploying your app!");
 			artifacts = null;
+		} else {
+			// Create the general cache-manifest resource for the landing page:
+			toReturn.add(emitLandingPageCacheManifest(context, logger,
+					artifacts));
 		}
-
-		// Create the general cache-manifest resource for the landing page:
-		toReturn.add(emitLandingPageCacheManifest(context, logger, artifacts));
 		return toReturn;
 
 	};
