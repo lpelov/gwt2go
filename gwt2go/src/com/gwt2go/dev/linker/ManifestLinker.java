@@ -3,6 +3,8 @@ package com.gwt2go.dev.linker;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
 
 import org.apache.commons.io.IOUtils;
 
@@ -12,6 +14,7 @@ import com.google.gwt.core.ext.UnableToCompleteException;
 import com.google.gwt.core.ext.linker.AbstractLinker;
 import com.google.gwt.core.ext.linker.Artifact;
 import com.google.gwt.core.ext.linker.ArtifactSet;
+import com.google.gwt.core.ext.linker.ConfigurationProperty;
 import com.google.gwt.core.ext.linker.EmittedArtifact;
 import com.google.gwt.core.ext.linker.LinkerOrder;
 import com.google.gwt.core.ext.linker.impl.SelectionInformation;
@@ -79,6 +82,7 @@ public class ManifestLinker extends AbstractLinker {
 
 	private static final String MANIFEST = "appcache.manifest";
 	private static final String MANIFESTTEMPLATE = "cache.manifest.template";
+	private static final String CONFIG_PROPERTY = "cache.manifest";
 
 	@Override
 	public String getDescription() {
@@ -147,11 +151,17 @@ public class ManifestLinker extends AbstractLinker {
 				}
 			}
 
-			String[] cacheExtraFiles = getCacheExtraFiles();
+			String[] cacheExtraFiles = getPropsExtraFiles(logger, context);
+
+			if (cacheExtraFiles.length == 0) {
+				cacheExtraFiles = getCacheExtraFiles();
+			}
+
 			for (int i = 0; i < cacheExtraFiles.length; i++) {
 				staticResoucesSb.append(cacheExtraFiles[i]);
 				staticResoucesSb.append("\n");
 			}
+
 		}
 
 		String cacheManifestString = createCache(logger, context,
@@ -200,6 +210,7 @@ public class ManifestLinker extends AbstractLinker {
 		// sb.append("*\n");
 
 		try {
+
 			String manifest = IOUtils.toString(getClass().getResourceAsStream(
 					appCacheManifestTemplate()));
 
@@ -252,5 +263,45 @@ public class ManifestLinker extends AbstractLinker {
 	 */
 	protected String appCacheManifestTemplate() {
 		return MANIFESTTEMPLATE;
+	}
+
+	protected String[] getPropsExtraFiles(TreeLogger logger,
+			LinkerContext context) {
+
+		// get the configured external properties, if any
+		// try to list the configuration properties here
+		// this files should be static external files
+
+		if (context.getConfigurationProperties().isEmpty()) {
+			logger.log(
+					TreeLogger.INFO,
+					"Info: No external static options "
+							+ " have been configured, configuration-property cache.manifest "
+							+ " is empty!");
+
+			return new String[0];
+
+		} else {
+
+			Iterator<ConfigurationProperty> it = context
+					.getConfigurationProperties().iterator();
+
+			while (it.hasNext()) {
+
+				ConfigurationProperty prop = it.next();
+
+				if (prop.getName().equalsIgnoreCase(CONFIG_PROPERTY)) {
+
+					List<String> props = prop.getValues();
+
+					return (String[]) props.toArray(new String[0]);
+				}
+
+			}
+
+		}
+
+		return new String[0];
+
 	}
 }

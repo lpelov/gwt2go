@@ -16,6 +16,7 @@
 
 <module>
 
-	<define-linker name="manifest" class="com.gwt2go.dev.linker.ManifestLinker" />
+	<define-linker name="manifest"
+		class="com.gwt2go.dev.linker.ManifestLinker" />
 
 </module>
