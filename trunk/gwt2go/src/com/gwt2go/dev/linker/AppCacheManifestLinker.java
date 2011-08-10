@@ -12,7 +12,7 @@ public class AppCacheManifestLinker extends ManifestLinker {
 
 	@Override
 	protected String[] otherCachedFiles() {
-		return new String[] { "/Gwt2go.html", "/Gwt2go.css" };
+		return new String[] { "/2Gwt2go.html", "/2Gwt2go.css" };
 	}
 
 	@Override
