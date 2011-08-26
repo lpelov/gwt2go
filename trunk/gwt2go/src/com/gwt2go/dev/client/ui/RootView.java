@@ -15,9 +15,9 @@ import com.google.gwt.user.client.ui.MenuItem;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
-import com.gwt2go.dev.client.mapper.RightActivityMapper;
-import com.gwt2go.dev.client.mapper.RootActivityMapper;
 import com.gwt2go.dev.client.ClientFactory;
+import com.gwt2go.dev.client.mapper.LeftSideActivityMapper;
+import com.gwt2go.dev.client.mapper.RightActivityMapper;
 
 public class RootView extends Composite implements MainView {
 
@@ -53,7 +53,7 @@ public class RootView extends Composite implements MainView {
 		this.clientFactory = clientFactory;
 
 		// Start ActivityManager for the main widget with our ActivityMapper
-		ActivityMapper leftActivityMapper = new RootActivityMapper(
+		ActivityMapper leftActivityMapper = new LeftSideActivityMapper(
 				clientFactory);
 		ActivityManager leftActivityManager = new ActivityManager(
 				leftActivityMapper, this.clientFactory.getEventBus());

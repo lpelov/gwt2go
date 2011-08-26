@@ -27,11 +27,11 @@ import com.gwt2go.dev.client.ClientFactory;
  * @author L.Pelov
  * 
  */
-public class RootActivityMapper implements ActivityMapper {
+public class LeftSideActivityMapper implements ActivityMapper {
 
 	private ClientFactory clientFactory;
 
-	public RootActivityMapper(ClientFactory clientFactory) {
+	public LeftSideActivityMapper(ClientFactory clientFactory) {
 		super();
 		this.clientFactory = clientFactory;
 	}
