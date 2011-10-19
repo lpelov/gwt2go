@@ -15,8 +15,9 @@
  */
 package com.gwt2go.dev.client;
 
-import com.google.gwt.event.shared.EventBus;
+
 import com.google.gwt.place.shared.PlaceController;
+import com.google.web.bindery.event.shared.EventBus;
 import com.gwt2go.dev.client.ui.CellTableSortingView;
 import com.gwt2go.dev.client.ui.CellTableSortingView23;
 import com.gwt2go.dev.client.ui.CellTableView;

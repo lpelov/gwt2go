@@ -16,9 +16,9 @@
 package com.gwt2go.dev.client;
 
 
-import com.google.gwt.event.shared.EventBus;
-import com.google.gwt.event.shared.SimpleEventBus;
 import com.google.gwt.place.shared.PlaceController;
+import com.google.web.bindery.event.shared.EventBus;
+import com.google.web.bindery.event.shared.SimpleEventBus;
 import com.gwt2go.dev.client.ui.CellTableSortingView;
 import com.gwt2go.dev.client.ui.CellTableSortingView23;
 import com.gwt2go.dev.client.ui.CellTableSortingView23Impl;
@@ -36,10 +36,10 @@ import com.gwt2go.dev.client.ui.MainView;
 import com.gwt2go.dev.client.ui.RightSide;
 import com.gwt2go.dev.client.ui.RootView;
 
-public class ClientFactoryImpl implements ClientFactory {
-	private final EventBus eventBus = new SimpleEventBus();
+public class ClientFactoryImpl implements ClientFactory {	
+	private final EventBus eventBus = new SimpleEventBus();	
 	private final PlaceController placeController = new PlaceController(
-			eventBus);
+			eventBus);	
 	private final HelloView helloView = new HelloViewImpl();
 	private final GoodbyeView goodbyeView = new GoodbyeViewImpl();
 	private final CellTableView cellTableView = new CellTableViewImpl();
