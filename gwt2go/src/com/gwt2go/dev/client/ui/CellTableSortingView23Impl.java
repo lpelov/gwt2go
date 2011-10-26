@@ -28,6 +28,7 @@ import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.view.client.ListDataProvider;
+import com.gwt2go.dev.client.ui.table.ImagesColumn;
 
 /**
  * Cell table sorting view implementation for GWT2.3
@@ -46,17 +47,19 @@ public class CellTableSortingView23Impl extends Composite implements
 	private static class Contact {
 		private final String address;
 		private final String name;
+		private final String color;
 
-		public Contact(String name, String address) {
+		public Contact(String name, String address, String color) {
 			this.name = name;
 			this.address = address;
+			this.color = color;
 		}
 	}
 
 	// The list of data to display.
 	private static List<Contact> CONTACTS = Arrays.asList(new Contact("John",
-			"123 Fourth Road"), new Contact("Mary", "222 Lancer Lane"),
-			new Contact("Zander", "94 Road Street"));
+			"123 Fourth Road", "red;"), new Contact("Mary", "222 Lancer Lane", "green;"),
+			new Contact("Zander", "94 Road Street", "blue;"));
 
 	public CellTableSortingView23Impl() {
 		// -- START TABLE
@@ -82,9 +85,19 @@ public class CellTableSortingView23Impl extends Composite implements
 	      }
 	    };
 
+	    ImagesColumn<Contact> imagesColumn = new ImagesColumn<Contact>(){
+	    	@Override
+	    	public String getValue(Contact object) {	    		
+	    		return object.color;
+	    	}
+	    };
+	    
+	    
 	    // Add the columns.
 	    table.addColumn(nameColumn, "Name");
 	    table.addColumn(addressColumn, "Address");
+	    table.addColumn(imagesColumn, "color");
+	    
 
 	    // Create a data provider.
 	    ListDataProvider<Contact> dataProvider = new ListDataProvider<Contact>();
