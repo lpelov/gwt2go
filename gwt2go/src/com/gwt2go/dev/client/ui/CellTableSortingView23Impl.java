@@ -19,12 +19,14 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
+import com.google.gwt.cell.client.FieldUpdater;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.ColumnSortEvent.ListHandler;
 import com.google.gwt.user.cellview.client.SimplePager;
 import com.google.gwt.user.cellview.client.TextColumn;
 import com.google.gwt.user.client.DOM;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.view.client.ListDataProvider;
@@ -91,6 +93,17 @@ public class CellTableSortingView23Impl extends Composite implements
 	    		return object.color;
 	    	}
 	    };
+	    
+	    // try to use the filed updater to call the value updater!!!
+	    imagesColumn.setFieldUpdater(new FieldUpdater<CellTableSortingView23Impl.Contact, String>() {
+			
+			@Override
+			public void update(int index, Contact object, String value) {
+				
+				Window.alert("This is the field updater, with value: " + value + " Index: " + index + " Contact: " + object.name);
+				
+			}
+		});
 	    
 	    
 	    // Add the columns.
