@@ -109,7 +109,7 @@ public class CellTableSortingView23Impl extends Composite implements
 	    // Add the columns.
 	    table.addColumn(nameColumn, "Name");
 	    table.addColumn(addressColumn, "Address");
-	    table.addColumn(imagesColumn, "color");
+	    table.addColumn(imagesColumn, "Export to");
 	    
 
 	    // Create a data provider.
