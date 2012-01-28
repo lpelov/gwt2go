@@ -13,6 +13,7 @@
 			<g:Button styleName="{style.important}" ui:field="button3" text="Button3" />
 			<g:Button styleName="{style.important}" ui:field="btnEditor" text="Editor" />
 			<p1:CellTree ui:field="cellTree"/>
+			<p1:CellTree ui:field="cellTree2"/>
 		</g:VerticalPanel>
 	</g:HTMLPanel>
 </ui:UiBinder> 
