@@ -32,9 +32,9 @@ import com.google.gwt.view.client.ListDataProvider;
 import com.google.gwt.view.client.SelectionChangeEvent;
 import com.google.gwt.view.client.SingleSelectionModel;
 import com.google.gwt.view.client.TreeViewModel;
-import com.gwt2go.dev.client.data.CustomTreeModel;
 import com.gwt2go.dev.client.place.RootPlace;
 import com.gwt2go.dev.client.ui.widget.celltree.CellTreeRooterModel;
+import com.gwt2go.dev.client.ui.widget.celltree.CustomTreeModel;
 import com.gwt2go.dev.client.ui.widget.celltree.GotoPlacesModel;
 import com.gwt2go.dev.client.ClientFactory;
 

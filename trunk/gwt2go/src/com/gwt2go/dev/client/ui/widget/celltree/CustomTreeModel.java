@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.gwt2go.dev.client.data;
+package com.gwt2go.dev.client.ui.widget.celltree;
 
 import java.util.ArrayList;
 import java.util.List;
