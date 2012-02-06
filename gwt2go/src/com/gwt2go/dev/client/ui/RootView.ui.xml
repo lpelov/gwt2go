@@ -21,7 +21,7 @@
 			border-color: #1D4088 #1D4088 -moz-use-text-color;
 			border-style: solid solid none;
 			border-width: 1px 1px 0;
-			height: 30px;
+			height: 35px;
 			/* margin-left: 180px; */
 			color: #FFFFFF;
 			display: inline-block;

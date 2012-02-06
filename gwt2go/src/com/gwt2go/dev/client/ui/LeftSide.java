@@ -24,13 +24,18 @@ import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.cellview.client.CellTree;
 import com.google.gwt.user.cellview.client.HasKeyboardSelectionPolicy.KeyboardSelectionPolicy;
 import com.google.gwt.user.cellview.client.TreeNode;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.view.client.ListDataProvider;
+import com.google.gwt.view.client.SelectionChangeEvent;
+import com.google.gwt.view.client.SingleSelectionModel;
 import com.google.gwt.view.client.TreeViewModel;
 import com.gwt2go.dev.client.data.CustomTreeModel;
 import com.gwt2go.dev.client.place.RootPlace;
+import com.gwt2go.dev.client.ui.widget.celltree.CellTreeRooterModel;
+import com.gwt2go.dev.client.ui.widget.celltree.GotoPlacesModel;
 import com.gwt2go.dev.client.ClientFactory;
 
 public class LeftSide extends Composite {
@@ -86,10 +91,41 @@ public class LeftSide extends Composite {
 	@UiField(provided = true)
 	CellTree cellTree2;
 
+	@UiField(provided = true)
+	CellTree cellTree3;
+
 	ClientFactory clientFactory;
 
+	private final SingleSelectionModel<String> selectionModel = new SingleSelectionModel<String>();
+
+	private final SingleSelectionModel<GotoPlacesModel> selectionModelPlaces = new SingleSelectionModel<GotoPlacesModel>();
+
 	public LeftSide(ClientFactory clientFactory) {
-		TreeViewModel model = new CustomTreeModel();
+
+		TreeViewModel model = new CustomTreeModel(selectionModel);
+		TreeViewModel treeRooterModel = new CellTreeRooterModel(selectionModelPlaces);
+		
+		selectionModel
+				.addSelectionChangeHandler(new SelectionChangeEvent.Handler() {
+					public void onSelectionChange(SelectionChangeEvent event) {
+						String selected = selectionModel.getSelectedObject();
+						if (selected != null) {
+							Window.alert("You selected: " + selected);
+						}
+					}
+				});
+
+		selectionModelPlaces
+				.addSelectionChangeHandler(new SelectionChangeEvent.Handler() {
+
+					@Override
+					public void onSelectionChange(SelectionChangeEvent event) {
+						GotoPlacesModel selected = selectionModelPlaces.getSelectedObject();
+						if (selected != null) {
+							Window.alert("You selected to go: " + selected.getGotoPlace());
+						}
+					}
+				});
 
 		// add the new tree
 		cellTree2 = new CellTree(model, null);
@@ -99,8 +135,12 @@ public class LeftSide extends Composite {
 		TreeNode rootNode = cellTree2.getRootTreeNode();
 		TreeNode firstPlaylist = rootNode.setChildOpen(0, true);
 		firstPlaylist.setChildOpen(0, true);
+		
+		
+		cellTree3 = new CellTree(treeRooterModel, null);
+		cellTree3.setKeyboardSelectionPolicy(KeyboardSelectionPolicy.ENABLED);
 
-		initWidget(uiBinder.createAndBindUi(this));
+		initWidget(uiBinder.createAndBindUi(this));		
 		button1.setText("SortingTable1");
 		button2.setText("SortingTable2");
 		button3.setText("SortingTable_GWT2.3");
