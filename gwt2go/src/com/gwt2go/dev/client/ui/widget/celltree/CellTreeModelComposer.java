@@ -13,29 +13,30 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.gwt2go.dev.client.data;
+package com.gwt2go.dev.client.ui.widget.celltree;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CellTreeDAOModel {
+public class CellTreeModelComposer {
 
 	private final String name;
-	private final List<String> sublevels = new ArrayList<String>();
+	private final List<CellTreeDAOModel> sublists = new ArrayList<CellTreeDAOModel>();
 
-	public CellTreeDAOModel(String name) {
+	public CellTreeModelComposer(String name) {
 		this.name = name;
 	}
 
-	public void addSubLevels(String name) {
-		sublevels.add(name);
+	public CellTreeDAOModel addPlaylist(CellTreeDAOModel playlist) {
+		sublists.add(playlist);
+		return playlist;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public List<String> getSubLevels() {
-		return sublevels;
+	public List<CellTreeDAOModel> getSubLists() {
+		return sublists;
 	}
 }
