@@ -1,5 +1,5 @@
 /*
- * Copyright 2010
+ * Copyright 2012
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -36,11 +36,14 @@ public class CustomTreeModel implements TreeViewModel {
 	 * nodes can have its own instance. This gives you flexibility to determine
 	 * how nodes are selected.
 	 */
-	private final SingleSelectionModel<String> selectionModel = new SingleSelectionModel<String>();
+	private final SingleSelectionModel<String> selectionModel;// = new SingleSelectionModel<String>();
 
-	public CustomTreeModel() {
+
+	public CustomTreeModel(SingleSelectionModel<String> selectionModel) {
+		
 		composers = new ArrayList<CellTreeModelComposer>();
-
+		this.selectionModel = selectionModel;
+		
 		// Add compositions
 		{
 			CellTreeModelComposer level1 = new CellTreeModelComposer("Level 1");
