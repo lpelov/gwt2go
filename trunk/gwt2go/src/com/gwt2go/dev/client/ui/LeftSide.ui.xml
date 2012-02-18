@@ -11,6 +11,7 @@
 			<g:Button styleName="{style.important}" ui:field="button1" text="Button1" />
 			<g:Button styleName="{style.important}" ui:field="button2" text="Button2" />
 			<g:Button styleName="{style.important}" ui:field="button3" text="Button3" />
+			<g:Button styleName="{style.important}" ui:field="button4" text="Button4" />
 			<g:Button styleName="{style.important}" ui:field="btnEditor" text="Editor" />
 			<p1:CellTree ui:field="cellTree"/>
 			<p1:CellTree ui:field="cellTree2"/>

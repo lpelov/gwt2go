@@ -54,6 +54,9 @@ public class LeftSide extends Composite {
 
 	@UiField
 	Button button3;
+	
+	@UiField
+	Button button4;
 
 	@UiField
 	Button btnEditor;
@@ -144,6 +147,7 @@ public class LeftSide extends Composite {
 		button1.setText("SortingTable1");
 		button2.setText("SortingTable2");
 		button3.setText("SortingTable_GWT2.3");
+		button4.setText("DragAndDrop");
 		btnEditor.setText("EditorWS");
 
 		this.clientFactory = clientFactory;
@@ -164,6 +168,12 @@ public class LeftSide extends Composite {
 	void onButton3Click(ClickEvent e) {
 		this.clientFactory.getPlaceController().goTo(
 				new RootPlace("sortingtable23"));
+	}
+
+	@UiHandler("button4")
+	void onButton4Click(ClickEvent e) {
+		this.clientFactory.getPlaceController().goTo(
+				new RootPlace("dragdrop1"));
 	}
 
 	@UiHandler("btnEditor")
