@@ -112,7 +112,11 @@ public class CellTreeRooterModel implements TreeViewModel {
 
 	@Override
 	public boolean isLeaf(Object value) {
+		if (value instanceof GotoPlacesModel) {
+			return true;
+		}
 		return false;
+
 	}
 
 }
