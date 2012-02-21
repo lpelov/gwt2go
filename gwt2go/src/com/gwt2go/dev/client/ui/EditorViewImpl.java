@@ -25,6 +25,7 @@ import com.google.gwt.event.dom.client.DropEvent;
 import com.google.gwt.event.dom.client.DropHandler;
 import com.google.gwt.user.cellview.client.SimplePager;
 import com.google.gwt.user.client.DOM;
+import com.google.gwt.user.client.Element;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
@@ -33,7 +34,6 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RichTextArea;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.gwt2go.dev.client.ui.editor.RichTextToolbar;
-import com.google.gwt.user.client.Element;
 
 /**
  * Editor view implementation.
@@ -68,6 +68,7 @@ public class EditorViewImpl extends Composite implements EditorView {
 				com.google.gwt.user.client.Element iFrame = area.getElement();
 
 				String txt = getSelectedElement(iFrame).toString();
+
 				// String txt = EditorUtils.getSelectedElement(iFrame);
 				Window.alert(txt);
 				// String name = flipName("lyudminame");
@@ -165,24 +166,49 @@ public class EditorViewImpl extends Composite implements EditorView {
 	}
 
 	public native String getSelectedElement(Element elm) /*-{
+		
+		function getFrameSelection() {
+			var txt = "initial";
+			if ($wnd.getSelection) {
+				txt = $wnd.getSelection();
+				$wnd.alert($wnd.getSelection());
+				$wnd.alert(txt + "11");
+			} else if ($wnd.document.getSelection) {
+				txt = $wnd.document.getSelection();
+				$wnd.alert(txt + "2");
+			} else if ($wnd.document.selection) {
+				txt = $wnd.document.selection.createRange().text;
+				$wnd.alert(txt + "3");
+			} else {
+				txt = "no selection";
+				$wnd.alert(txt);
+			}
+			// $wnd.alert(txt);
+			return txt;
+		}
+		
 		var txt = "no text";
 		txt = elm.contentWindow.getSelection();
-		//$wnd.alert(txt);
+		//txt = $wnd.getIframeSelection();		
 		return txt.toString();
 	}-*/;
 
-	public native String getSelection()/*-{
-		var txt = "bla";
+	public native String getIframeSelection()/*-{
+		var txt = "initial";
 		if ($wnd.getSelection) {
 			txt = $wnd.getSelection();
+			$wnd.alert(txt + "1");
 		} else if ($wnd.document.getSelection) {
 			txt = $wnd.document.getSelection();
+			$wnd.alert(txt + "2");
 		} else if ($wnd.document.selection) {
 			txt = $wnd.document.selection.createRange().text;
+			$wnd.alert(txt + "3");
 		} else {
-			txt = "nix";
+			txt = "no selection";
+			$wnd.alert(txt);
 		}
-		$wnd.alert(txt);
+		// $wnd.alert(txt);
 		return txt;
 	}-*/;
 
@@ -194,5 +220,4 @@ public class EditorViewImpl extends Composite implements EditorView {
 		return name.replace(re, '$2, $1');
 
 	}-*/;
-
 }
