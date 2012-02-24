@@ -61,6 +61,9 @@ public class LeftSide extends Composite {
 	@UiField
 	Button btnEditor;
 
+	@UiField
+	Button btnDnd;
+
 	@UiField(provided = true)
 	CellTree cellTree = new CellTree(new TreeViewModel() {
 		// final AbstractDataProvider<String> dataProvider = new
@@ -179,6 +182,11 @@ public class LeftSide extends Composite {
 	@UiHandler("btnEditor")
 	void onbtnEditorClick(ClickEvent e) {
 		this.clientFactory.getPlaceController().goTo(new RootPlace("editor"));
+	}
+	
+	@UiHandler("btnDnd")
+	void onbtnDndClick(ClickEvent e) {
+		this.clientFactory.getPlaceController().goTo(new RootPlace("dnd"));
 	}
 
 }
