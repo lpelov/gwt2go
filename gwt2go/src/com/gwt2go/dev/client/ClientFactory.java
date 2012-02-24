@@ -27,6 +27,7 @@ import com.gwt2go.dev.client.ui.HelloView;
 import com.gwt2go.dev.client.ui.LeftSide;
 import com.gwt2go.dev.client.ui.MainView;
 import com.gwt2go.dev.client.ui.RightSide;
+import com.gwt2go.dev.client.ui.widget.dnd.DndView;
 
 /**
  * Client Factory Interface
@@ -55,4 +56,6 @@ public interface ClientFactory {
 	RightSide getRightSide();
 	
 	EditorView getEditorView();
+	
+	DndView getDndView();
 }

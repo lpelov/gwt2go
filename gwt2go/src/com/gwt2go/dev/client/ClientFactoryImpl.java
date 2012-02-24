@@ -15,7 +15,6 @@
  */
 package com.gwt2go.dev.client;
 
-
 import com.google.gwt.place.shared.PlaceController;
 import com.google.web.bindery.event.shared.EventBus;
 import com.google.web.bindery.event.shared.SimpleEventBus;
@@ -35,11 +34,18 @@ import com.gwt2go.dev.client.ui.LeftSide;
 import com.gwt2go.dev.client.ui.MainView;
 import com.gwt2go.dev.client.ui.RightSide;
 import com.gwt2go.dev.client.ui.RootView;
+import com.gwt2go.dev.client.ui.widget.dnd.DndView;
+import com.gwt2go.dev.client.ui.widget.dnd.DndViewImpl;
 
-public class ClientFactoryImpl implements ClientFactory {	
-	private final EventBus eventBus = new SimpleEventBus();	
+/**
+ * Client factory implementation
+ * 
+ * @author L.Pelov
+ */
+public class ClientFactoryImpl implements ClientFactory {
+	private final EventBus eventBus = new SimpleEventBus();
 	private final PlaceController placeController = new PlaceController(
-			eventBus);	
+			eventBus);
 	private final HelloView helloView = new HelloViewImpl();
 	private final GoodbyeView goodbyeView = new GoodbyeViewImpl();
 	private final CellTableView cellTableView = new CellTableViewImpl();
@@ -49,6 +55,7 @@ public class ClientFactoryImpl implements ClientFactory {
 	private final LeftSide leftSide = new LeftSide(this);
 	private final RightSide rightSide = new RightSide();
 	private final EditorView editorView = new EditorViewImpl();
+	private final DndView dndView = new DndViewImpl();
 
 	@Override
 	public EventBus getEventBus() {
@@ -103,6 +110,11 @@ public class ClientFactoryImpl implements ClientFactory {
 	@Override
 	public EditorView getEditorView() {
 		return editorView;
+	}
+
+	@Override
+	public DndView getDndView() {
+		return dndView;
 	}
 
 }
