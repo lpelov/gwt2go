@@ -15,11 +15,16 @@
  */
 package com.gwt2go.dev.client.ui.widget.celltree;
 
+/**
+ * This model can be used together with CellTree to root to MVP Places
+ * 
+ * @author L.Pelov
+ */
 public class GotoPlacesModel {
 
 	private final String name;
 	private final String gotoPlace;
-	
+
 	public GotoPlacesModel(String name, String gotoPlace) {
 		this.name = name;
 		this.gotoPlace = gotoPlace;
@@ -32,5 +37,5 @@ public class GotoPlacesModel {
 	public String getGotoPlace() {
 		return gotoPlace;
 	}
-	
+
 }
