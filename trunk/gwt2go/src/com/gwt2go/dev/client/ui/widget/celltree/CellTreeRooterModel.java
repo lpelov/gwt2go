@@ -25,6 +25,11 @@ import com.google.gwt.view.client.ListDataProvider;
 import com.google.gwt.view.client.SingleSelectionModel;
 import com.google.gwt.view.client.TreeViewModel;
 
+/**
+ * TreeVievModel defines how to render the cell tree navigation.
+ * 
+ * @author L.Pelov
+ */
 public class CellTreeRooterModel implements TreeViewModel {
 
 	private final List<CellTreeRooterDaoComposer> composers;
@@ -39,15 +44,20 @@ public class CellTreeRooterModel implements TreeViewModel {
 		{ // First section
 
 			CellTreeRooterDaoComposer level1 = new CellTreeRooterDaoComposer(
-					"Level 1");
+					"Widgets");
 			composers.add(level1);
 
 			CellTreeRooterDaoModel sublevel_1_1 = level1
-					.addNode(new CellTreeRooterDaoModel("Level 1.1"));
+					.addNode(new CellTreeRooterDaoModel("Tables"));
 
-			sublevel_1_1.addNode("Level 1.1.1", "tables1");
-			sublevel_1_1.addNode("Level 1.1.2", "tables2");
-			sublevel_1_1.addNode("Level 1.1.3", "tables3");
+			sublevel_1_1.addNode("Sorting table - example 1", "table");
+			sublevel_1_1.addNode("Sorting table - example 1", "table2");
+			sublevel_1_1.addNode("Sorting table - GWT2.3", "sortingtable23");
+
+			CellTreeRooterDaoModel sublevel_1_2 = level1
+					.addNode(new CellTreeRooterDaoModel("Editor"));
+
+			sublevel_1_2.addNode("Editor - WYSIWYG", "editor");
 
 		}
 
@@ -112,6 +122,8 @@ public class CellTreeRooterModel implements TreeViewModel {
 
 	@Override
 	public boolean isLeaf(Object value) {
+		// you have to put this here otherwise you will get icon on the front of the latest
+		// three element and looks like you have also under-levels, which is not nice
 		if (value instanceof GotoPlacesModel) {
 			return true;
 		}
