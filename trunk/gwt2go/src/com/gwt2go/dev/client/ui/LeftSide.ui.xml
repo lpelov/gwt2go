@@ -8,15 +8,14 @@
 	</ui:style>
 	<g:HTMLPanel>
 		<g:VerticalPanel>
-			<g:Button styleName="{style.important}" ui:field="button1" text="Button1" />
-			<g:Button styleName="{style.important}" ui:field="button2" text="Button2" />
-			<g:Button styleName="{style.important}" ui:field="button3" text="Button3" />
-			<g:Button styleName="{style.important}" ui:field="button4" text="Button4" />
-			<g:Button styleName="{style.important}" ui:field="btnEditor" text="Editor" />
-			<g:Button styleName="{style.important}" ui:field="btnDnd" text="DND" />
+			<!-- p1:CellTree ui:field="cellTreeMenu"/ -->
+			<p1:CellTree ui:field="cellTree3" styleName="{style.important}"/>
+			<!-- g:Button styleName="{style.important}" ui:field="button1" text="Button1" / -->
+			<!-- g:Button styleName="{style.important}" ui:field="button2" text="Button2" / -->
+			<!-- g:Button styleName="{style.important}" ui:field="button3" text="Button3" / -->
+			<!-- g:Button styleName="{style.important}" ui:field="btnEditor" text="Editor" / -->
 			<p1:CellTree ui:field="cellTree"/>
-			<p1:CellTree ui:field="cellTree2"/>
-			<p1:CellTree ui:field="cellTree3"/>
+			<p1:CellTree ui:field="cellTree2"/>			
 		</g:VerticalPanel>
 	</g:HTMLPanel>
 </ui:UiBinder> 
