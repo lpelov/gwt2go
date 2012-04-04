@@ -59,6 +59,11 @@ public class CellTreeRooterModel implements TreeViewModel {
 
 			sublevel_1_2.addNode("Editor - WYSIWYG", "editor");
 
+			CellTreeRooterDaoModel sublevel_1_3 = level1
+					.addNode(new CellTreeRooterDaoModel("Trees"));
+
+			sublevel_1_3.addNode("CellTree Exampl1", "celltree1");
+
 		}
 
 	}
