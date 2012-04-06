@@ -64,6 +64,10 @@ public class CellTreeRooterModel implements TreeViewModel {
 
 			sublevel_1_3.addNode("CellTree Exampl1", "celltree1");
 
+			CellTreeRooterDaoModel sublevel_1_4 = level1
+					.addNode(new CellTreeRooterDaoModel("Dnd"));
+
+			sublevel_1_4.addNode("Drag and Drop 1", "dnd");
 		}
 
 	}
