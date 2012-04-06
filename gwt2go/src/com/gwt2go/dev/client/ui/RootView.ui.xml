@@ -86,7 +86,7 @@
 										<td>
 											<!-- Title and subtitle. -->
 											<h2 class='{style.subtitle}'>
-												<ui:msg key='mainSubTitle'>testfactory</ui:msg>
+												<ui:msg key='mainSubTitle'>gwt2go</ui:msg>
 											</h2>
 										</td>
 									</tr>
