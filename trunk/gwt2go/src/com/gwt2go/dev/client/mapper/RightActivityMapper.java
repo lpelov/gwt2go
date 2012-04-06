@@ -23,6 +23,7 @@ import com.gwt2go.dev.client.activity.CellTableActivity;
 import com.gwt2go.dev.client.activity.CellTableSorting23Activity;
 import com.gwt2go.dev.client.activity.CellTableSortingActivity;
 import com.gwt2go.dev.client.activity.DndActivity;
+import com.gwt2go.dev.client.activity.CellTreeExpl1Activity;
 import com.gwt2go.dev.client.activity.EditorActivity;
 import com.gwt2go.dev.client.activity.GoodbyeActivity;
 import com.gwt2go.dev.client.place.RootPlace;
@@ -62,9 +63,13 @@ public class RightActivityMapper implements ActivityMapper {
 			if (name.equalsIgnoreCase("editor")) {
 				return new EditorActivity(null, clientFactory);
 			}
-
+			
 			if (name.equalsIgnoreCase("dnd")) {
 				return new DndActivity(null, clientFactory);
+			}
+
+			if (name.equalsIgnoreCase("celltree1")) {
+				return new CellTreeExpl1Activity(null, clientFactory);
 			}
 
 		}
