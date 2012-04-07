@@ -17,12 +17,8 @@ package com.gwt2go.dev.client.ui;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.event.dom.client.DragOverEvent;
-import com.google.gwt.event.dom.client.DragOverHandler;
 import com.google.gwt.event.dom.client.DragStartEvent;
 import com.google.gwt.event.dom.client.DragStartHandler;
-import com.google.gwt.event.dom.client.DropEvent;
-import com.google.gwt.event.dom.client.DropHandler;
 import com.google.gwt.user.cellview.client.SimplePager;
 import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.Element;
@@ -30,7 +26,6 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Grid;
-import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RichTextArea;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.gwt2go.dev.client.ui.editor.RichTextToolbar;
@@ -48,10 +43,7 @@ public class EditorViewImpl extends Composite implements EditorView {
 	SimplePager pager;
 	// / ADD WYSIWYG Editor here now
 	final RichTextArea area = new RichTextArea();
-	
-	final Label lbDrag = new Label("Drag me");
-	final Label lbTarget = new Label("Drag on me");
-	
+		
 	RichTextToolbar toolbar = new RichTextToolbar(area);
 	Button btnSelectedText = new Button("Get Selected Text");
 
@@ -82,8 +74,6 @@ public class EditorViewImpl extends Composite implements EditorView {
 		grid.setWidget(0, 0, toolbar);
 		grid.setWidget(1, 0, area);
 		grid.setWidget(2, 0, btnSelectedText);
-		grid.setWidget(3, 0, lbDrag);
-		grid.setWidget(4, 0, lbTarget);
 		grid.setBorderWidth(1);
 
 		toolbar.ensureDebugId("cwRichText-toolbar");
@@ -93,17 +83,6 @@ public class EditorViewImpl extends Composite implements EditorView {
 
 		viewPanel.add(grid);
 
-		lbDrag.getElement().setDraggable(Element.DRAGGABLE_TRUE);
-		lbDrag.addDragStartHandler(new DragStartHandler() {
-			@Override
-			public void onDragStart(DragStartEvent event) {
-				// Required set data
-				event.setData("text", "hello drag me");
-				
-				event.getDataTransfer().setDragImage(lbDrag.getElement(), 10, 10);
-			}
-		});
-		
 		btnSelectedText.getElement().setDraggable(Element.DRAGGABLE_TRUE);
 		btnSelectedText.addDragStartHandler(new DragStartHandler() {
 			
@@ -115,40 +94,6 @@ public class EditorViewImpl extends Composite implements EditorView {
 				event.getDataTransfer().setDragImage(btnSelectedText.getElement(), 10, 10);				
 			}
 		});
-		
-		// alternative way to start drag and drop
-//		lbDrag.addDomHandler(new DragStartHandler() {
-//			
-//			@Override
-//			public void onDragStart(DragStartEvent event) {
-//				// Required set data
-//				event.setData("text", "hello drag me");
-//				
-//				event.getDataTransfer().setDragImage(lbDrag.getElement(), 10, 10);
-//				
-//			}
-//		}, DragStartEvent.getType());
-
-		
-		lbTarget.addDragOverHandler(new DragOverHandler() {
-			
-			@Override
-			public void onDragOver(DragOverEvent event) {
-				lbTarget.getElement().getStyle().setBackgroundColor("#ffa");				
-			}
-		});
-		
-		lbTarget.addDropHandler(new DropHandler() {
-			
-			@Override
-			public void onDrop(DropEvent event) {
-				event.preventDefault();
-				
-				String data = event.getData("text");
-				lbTarget.setText(data);
-			}
-		});
-			
 		
 		initWidget(viewPanel);
 
