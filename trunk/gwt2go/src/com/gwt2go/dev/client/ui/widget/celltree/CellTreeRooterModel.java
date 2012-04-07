@@ -51,8 +51,8 @@ public class CellTreeRooterModel implements TreeViewModel {
 					.addNode(new CellTreeRooterDaoModel("Tables"));
 
 			sublevel_1_1.addNode("Sorting table - example 1", "table");
-			sublevel_1_1.addNode("Sorting table - example 1", "table2");
-			sublevel_1_1.addNode("Sorting table - GWT2.3", "sortingtable23");
+			sublevel_1_1.addNode("Sorting table - example 2", "table2");
+			sublevel_1_1.addNode("Sorting table - GWT2.3 way", "sortingtable23");
 
 			CellTreeRooterDaoModel sublevel_1_2 = level1
 					.addNode(new CellTreeRooterDaoModel("Editor"));
