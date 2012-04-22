@@ -15,36 +15,16 @@
  */
 package com.gwt2go.dev.client.ui.widget.dnd;
 
-import com.google.gwt.user.client.DOM;
-import com.google.gwt.user.client.Element;
 import com.google.gwt.user.client.ui.Composite;
-import com.gwt2go.dev.client.ui.widget.LazySimplePanel;
 
-/**
- * Drag and Drop View Implementation
- * 
- * @author L.Pelov
- */
-public class DndViewImpl extends Composite implements DndView {
+public class DndView2Impl extends Composite implements DndView {
 
-	private final String name = "DndViewImpl";
-	private LazySimplePanel viewPanel;
-	private Element nameSpan = DOM.createSpan();
-
-	public DndViewImpl() {
-		nameSpan.setInnerText("Default text, again");
-		viewPanel = new LazySimplePanel(nameSpan);
-		viewPanel.setVisible(true);
-		initWidget(viewPanel);
+	public DndView2Impl() {
+		
 	}
-
+	
 	@Override
 	public void setName(String name) {
-		if (name != null && name.length() > 0) {
-			nameSpan.setInnerText("DND Example name: " + name);
-		} else {
-			nameSpan.setInnerText("DND Example name: " + this.name);
-		}
 	}
 
 	@Override
