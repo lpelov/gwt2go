@@ -9,5 +9,6 @@
 	<g:HTMLPanel>
 		Hello,
 		<g:Button styleName="{style.important}" ui:field="button" />
+		<div ui:field="divEl">This is going to be the 2 DND example</div>
 	</g:HTMLPanel>
 </ui:UiBinder> 

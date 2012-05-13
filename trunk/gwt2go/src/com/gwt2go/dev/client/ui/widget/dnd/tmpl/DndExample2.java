@@ -1,7 +1,9 @@
 package com.gwt2go.dev.client.ui.widget.dnd.tmpl;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.dom.client.DivElement;
 import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.uibinder.client.LazyDomElement;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
@@ -30,6 +32,9 @@ public class DndExample2 extends Composite implements HasText {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
 
+	@UiField
+	LazyDomElement<DivElement> divEl;
+	
 	@UiField
 	Button button;
 
