@@ -20,9 +20,9 @@ import com.google.gwt.user.client.ui.Composite;
 public class DndView2Impl extends Composite implements DndView {
 
 	public DndView2Impl() {
-		
+
 	}
-	
+
 	@Override
 	public void setName(String name) {
 	}

@@ -52,8 +52,7 @@ public class CellTreeExpl1ViewImpl extends Composite implements
 
 	@UiField
 	HTMLPanel htmlPanel;
-
-
+			
 	@UiField(provided = true)
 	CellTree cellTree1 = new CellTree(new TreeViewModel() {
 		// final AbstractDataProvider<String> dataProvider = new
@@ -88,7 +87,7 @@ public class CellTreeExpl1ViewImpl extends Composite implements
 	CellTree cellTree2;
 
 	private final SingleSelectionModel<String> selectionModel = new SingleSelectionModel<String>();
-
+	
 	public CellTreeExpl1ViewImpl(final ClientFactory clientFactory) {
 
 		TreeViewModel model = new CustomTreeModel(selectionModel);
@@ -111,8 +110,8 @@ public class CellTreeExpl1ViewImpl extends Composite implements
 		TreeNode rootNode = cellTree2.getRootTreeNode();
 		TreeNode firstPlaylist = rootNode.setChildOpen(0, true);
 		firstPlaylist.setChildOpen(0, true);
-
-		initWidget(uiBinder.createAndBindUi(this));
+				
+		initWidget(uiBinder.createAndBindUi(this));			
 	}
 
 	@Override

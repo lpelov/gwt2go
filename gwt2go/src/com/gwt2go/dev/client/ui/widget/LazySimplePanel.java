@@ -30,8 +30,7 @@ import com.google.gwt.user.client.ui.Widget;
 
 public class LazySimplePanel extends LazyPanel {
 
-	private Element nameSpan;
-	private VerticalPanel vrPanel = new VerticalPanel();
+	private Element nameSpan;	
 	
 	public LazySimplePanel(Element nameSpan) {
 		this.nameSpan = nameSpan;
@@ -40,6 +39,7 @@ public class LazySimplePanel extends LazyPanel {
 	@Override
 	protected Widget createWidget() {
 		SimplePanel panel = new SimplePanel();
+		VerticalPanel vrPanel = new VerticalPanel();
 
 		final Label label = new Label("Drag me");
 		label.getElement().setDraggable(Element.DRAGGABLE_TRUE);
