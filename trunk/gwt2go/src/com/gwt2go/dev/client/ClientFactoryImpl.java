@@ -35,6 +35,8 @@ import com.gwt2go.dev.client.ui.LeftSide;
 import com.gwt2go.dev.client.ui.MainView;
 import com.gwt2go.dev.client.ui.RightSide;
 import com.gwt2go.dev.client.ui.RootView;
+import com.gwt2go.dev.client.ui.table.DataGridImpl1;
+import com.gwt2go.dev.client.ui.table.DataGridView;
 import com.gwt2go.dev.client.ui.view.CellTreeExpl1View;
 import com.gwt2go.dev.client.ui.view.CellTreeExpl1ViewImpl;
 import com.gwt2go.dev.client.ui.widget.dnd.DndView;
@@ -55,6 +57,7 @@ public class ClientFactoryImpl implements ClientFactory {
 	private final EditorView editorView = new EditorViewImpl();
 	private final DndView dndView = new DndViewImpl();
 	private final CellTreeExpl1View cellTreeExpl1View = new CellTreeExpl1ViewImpl(this);
+	private final DataGridView dataGridView = new DataGridImpl1();
 
 	@Override
 	public EventBus getEventBus() {
@@ -119,6 +122,11 @@ public class ClientFactoryImpl implements ClientFactory {
 	@Override
 	public CellTreeExpl1View getCellTreeViewExpl1() {
 		return cellTreeExpl1View;
+	}
+
+	@Override
+	public DataGridView getDataGridView(String view) {
+		return dataGridView;
 	}
 
 }

@@ -27,6 +27,7 @@ import com.gwt2go.dev.client.ui.HelloView;
 import com.gwt2go.dev.client.ui.LeftSide;
 import com.gwt2go.dev.client.ui.MainView;
 import com.gwt2go.dev.client.ui.RightSide;
+import com.gwt2go.dev.client.ui.table.DataGridView;
 import com.gwt2go.dev.client.ui.view.CellTreeExpl1View;
 import com.gwt2go.dev.client.ui.widget.dnd.DndView;
 
@@ -61,4 +62,6 @@ public interface ClientFactory {
 	DndView getDndView();
 	
 	CellTreeExpl1View getCellTreeViewExpl1();
+	
+	DataGridView getDataGridView(String view);
 }
