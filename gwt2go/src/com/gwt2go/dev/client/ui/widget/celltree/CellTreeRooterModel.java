@@ -53,6 +53,7 @@ public class CellTreeRooterModel implements TreeViewModel {
 			sublevel_1_1.addNode("Sorting table - example 1", "table");
 			sublevel_1_1.addNode("Sorting table - example 2", "table2");
 			sublevel_1_1.addNode("Sorting table - GWT2.3 way", "sortingtable23");
+			sublevel_1_1.addNode("DataGrid - GWT2.4 way", "datagrid1");
 
 			CellTreeRooterDaoModel sublevel_1_2 = level1
 					.addNode(new CellTreeRooterDaoModel("Editor"));
@@ -68,6 +69,7 @@ public class CellTreeRooterModel implements TreeViewModel {
 					.addNode(new CellTreeRooterDaoModel("Dnd"));
 
 			sublevel_1_4.addNode("Drag and Drop 1", "dnd");
+			sublevel_1_4.addNode("Drag and Drop 2", "dnd2");
 		}
 
 	}
