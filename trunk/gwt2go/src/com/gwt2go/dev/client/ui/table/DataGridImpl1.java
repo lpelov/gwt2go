@@ -72,6 +72,14 @@ public class DataGridImpl1 extends ResizeComposite implements DataGridView {
 		DataGrid<Contact> table = new DataGrid<Contact>();
 		table.setWidth("100%");
 		table.setHeight("100px");
+		
+//		table.setRowStyles(new RowStyles<DataGridImpl1.Contact>() {			
+//			@Override
+//			public String getStyleNames(Contact row, int rowIndex) {
+//				return "headcol";
+//			}
+//		});
+		
 		table.setEmptyTableWidget(new Label("No Information to show"));
 		table.setKeyboardSelectionPolicy(KeyboardSelectionPolicy.ENABLED);
 
