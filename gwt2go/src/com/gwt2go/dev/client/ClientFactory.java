@@ -61,6 +61,8 @@ public interface ClientFactory {
 	
 	DndView getDndView();
 	
+	DndView getDnd2View();
+	
 	CellTreeExpl1View getCellTreeViewExpl1();
 	
 	DataGridView getDataGridView(String view);

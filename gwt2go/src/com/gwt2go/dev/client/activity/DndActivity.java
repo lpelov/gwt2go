@@ -20,7 +20,7 @@ import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.gwt2go.dev.client.ClientFactory;
-import com.gwt2go.dev.client.place.DndPlace;
+import com.gwt2go.dev.client.place.Dnd2Place;
 import com.gwt2go.dev.client.ui.widget.dnd.DndView;
 
 /**
@@ -30,14 +30,23 @@ import com.gwt2go.dev.client.ui.widget.dnd.DndView;
 public class DndActivity extends AbstractActivity implements DndView.Presenter {
 
 	private ClientFactory clientFactory;
+	private Place place;
 
-	public DndActivity(DndPlace place, ClientFactory clientFactory) {
+	public DndActivity(Place place, ClientFactory clientFactory) {
 		this.clientFactory = clientFactory;
+		this.place = place;
 	}
 
 	@Override
 	public void start(AcceptsOneWidget panel, EventBus eventBus) {
-		DndView dndView = this.clientFactory.getDndView();
+
+		DndView dndView;
+
+		if (place instanceof Dnd2Place) {
+			dndView = this.clientFactory.getDndView();
+		} else {
+			dndView = this.clientFactory.getDndView();
+		}
 
 		dndView.setPresenter(this);
 		panel.setWidget(dndView);
