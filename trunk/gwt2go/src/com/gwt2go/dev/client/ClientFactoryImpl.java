@@ -40,6 +40,7 @@ import com.gwt2go.dev.client.ui.table.DataGridView;
 import com.gwt2go.dev.client.ui.view.CellTreeExpl1View;
 import com.gwt2go.dev.client.ui.view.CellTreeExpl1ViewImpl;
 import com.gwt2go.dev.client.ui.widget.dnd.DndView;
+import com.gwt2go.dev.client.ui.widget.dnd.DndView2Impl;
 import com.gwt2go.dev.client.ui.widget.dnd.DndViewImpl;
 
 public class ClientFactoryImpl implements ClientFactory {	
@@ -56,6 +57,7 @@ public class ClientFactoryImpl implements ClientFactory {
 	private final RightSide rightSide = new RightSide();
 	private final EditorView editorView = new EditorViewImpl();
 	private final DndView dndView = new DndViewImpl();
+	private final DndView dnd2View = new DndView2Impl();
 	private final CellTreeExpl1View cellTreeExpl1View = new CellTreeExpl1ViewImpl(this);
 	private final DataGridView dataGridView = new DataGridImpl1();
 
@@ -127,6 +129,11 @@ public class ClientFactoryImpl implements ClientFactory {
 	@Override
 	public DataGridView getDataGridView(String view) {
 		return dataGridView;
+	}
+
+	@Override
+	public DndView getDnd2View() {
+		return dnd2View;
 	}
 
 }

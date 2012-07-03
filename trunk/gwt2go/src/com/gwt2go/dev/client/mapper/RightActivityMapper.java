@@ -27,6 +27,7 @@ import com.gwt2go.dev.client.activity.DndActivity;
 import com.gwt2go.dev.client.activity.CellTreeExpl1Activity;
 import com.gwt2go.dev.client.activity.EditorActivity;
 import com.gwt2go.dev.client.activity.GoodbyeActivity;
+import com.gwt2go.dev.client.place.Dnd2Place;
 import com.gwt2go.dev.client.place.RootPlace;
 
 /**
@@ -67,6 +68,10 @@ public class RightActivityMapper implements ActivityMapper {
 
 			if (name.equalsIgnoreCase("dnd")) {
 				return new DndActivity(null, clientFactory);
+			}
+
+			if (name.equalsIgnoreCase("dnd2")) {
+				return new DndActivity(new Dnd2Place("dnd2"), clientFactory);
 			}
 
 			if (name.equalsIgnoreCase("celltree1")) {
