@@ -15,20 +15,35 @@
  */
 package com.gwt2go.dev.client.ui.widget.dnd;
 
+import com.google.gwt.user.client.DOM;
+import com.google.gwt.user.client.Element;
 import com.google.gwt.user.client.ui.Composite;
 
 public class DndView2Impl extends Composite implements DndView {
 
+
+	private final String name = "DndView2Impl";
+	private DragDropWidget viewPanel;
+	private Element nameSpan = DOM.createSpan();
+
 	public DndView2Impl() {
+		nameSpan.setInnerText("2 - Default text, again");
+		viewPanel = new DragDropWidget(nameSpan);
+		viewPanel.setVisible(true);
+		initWidget(viewPanel);
 
 	}
 
 	@Override
 	public void setName(String name) {
+		if (name != null && name.length() > 0) {
+			nameSpan.setInnerText("DND 2 Example name: " + name);
+		} else {
+			nameSpan.setInnerText("DND 2 Example name: " + this.name);
+		}
 	}
 
 	@Override
 	public void setPresenter(Presenter presenter) {
 	}
-
 }
