@@ -43,7 +43,7 @@ public class DndActivity extends AbstractActivity implements DndView.Presenter {
 		DndView dndView;
 
 		if (place instanceof Dnd2Place) {
-			dndView = this.clientFactory.getDndView();
+			dndView = this.clientFactory.getDnd2View();
 		} else {
 			dndView = this.clientFactory.getDndView();
 		}

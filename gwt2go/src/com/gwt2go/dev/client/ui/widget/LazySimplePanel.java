@@ -50,7 +50,7 @@ public class LazySimplePanel extends LazyPanel {
 			public void onDragStart(DragStartEvent event) {
 				// required
 				event.setData("text", "Hello World");
-
+				
 				// optinal: show copy of the image
 				event.getDataTransfer()
 						.setDragImage(label.getElement(), 10, 10);
