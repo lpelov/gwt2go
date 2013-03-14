@@ -66,11 +66,16 @@ public class RootView extends Composite implements MainView {
 				rightActivityMapper, this.clientFactory.getEventBus());
 		rightActivityManager.setDisplay(rightPanel);
 
-		btnHome.setCommand(cmdBtnHome);
-		btnProfile.setCommand(cmdBtnProfile);
-		btnSettings.setCommand(cmdBtnSettings);
-		btnLogout.setCommand(cmdBtnLogout);
-		
+//		btnHome.setCommand(cmdBtnHome);
+//		btnProfile.setCommand(cmdBtnProfile);
+//		btnSettings.setCommand(cmdBtnSettings);
+//		btnLogout.setCommand(cmdBtnLogout);
+
+		btnHome.setScheduledCommand(cmdBtnHome);
+		btnProfile.setScheduledCommand(cmdBtnProfile);
+		btnSettings.setScheduledCommand(cmdBtnSettings);
+		btnLogout.setScheduledCommand(cmdBtnLogout);
+
 		// check to see if local storage API can be used!
 		// TODO: How to make application work offline!!!?!?!?
 		if (Storage.isSupported()) {
