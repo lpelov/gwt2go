@@ -66,6 +66,16 @@ public class RootView extends Composite implements MainView {
 				rightActivityMapper, this.clientFactory.getEventBus());
 		rightActivityManager.setDisplay(rightPanel);
 
+
+		//btnHome.setCommand(cmdBtnHome);
+		btnHome.setScheduledCommand(cmdBtnHome);
+		//btnProfile.setCommand(cmdBtnProfile);
+		btnProfile.setScheduledCommand(cmdBtnProfile);
+		//btnSettings.setCommand(cmdBtnSettings);
+		btnSettings.setScheduledCommand(cmdBtnSettings);
+		//btnLogout.setCommand(cmdBtnLogout);
+		btnLogout.setScheduledCommand(cmdBtnLogout);
+		
 //		btnHome.setCommand(cmdBtnHome);
 //		btnProfile.setCommand(cmdBtnProfile);
 //		btnSettings.setCommand(cmdBtnSettings);
