@@ -1,7 +1,8 @@
 # gwt2go
 Automatically exported from code.google.com/p/gwt2go
 
-Click on the links bellow for more information.<br>
+README NOT FINISHED YET! IT IS 1:1 MIGRATED FROM GOOGLE CODE CURENTLY!
+
 === This project contains GWT examples code which I use into my [http://webcentersuite.blogspot.com/ Blog]! ===
 Click on the links bellow for more information.<br>
 ----
